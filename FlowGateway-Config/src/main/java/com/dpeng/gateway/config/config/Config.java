@@ -2,34 +2,39 @@ package com.dpeng.gateway.config.config;
 
 import com.dpeng.gateway.common.enums.ConfigCenterEnum;
 import com.dpeng.gateway.common.enums.RegisterCenterEnum;
+import com.dpeng.gateway.config.pojo.RouteDefinition;
 import lombok.Data;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import static com.dpeng.gateway.common.constant.ConfigConstant.*;
 
 
 /**
- * 网关配置
+ * 网关静态配置
  */
 @Data
 public class Config {
 
     // base
-    private int port = 9999;
-    private String env = "dev";
+    private String name = DEFAULT_NAME; // 服务名称
+    private int port = DEFAULT_PORT; // 端口
+    private String env = DEFAULT_ENV; // 环境
 
     // 配置中心
-    private ConfigCenterEnum configCenter = ConfigCenterEnum.NACOS; // 配置中心实现
-    private String configAddress = "127.0.0.1:8848"; // 配置中心地址
+    private ConfigCenter configCenter = new ConfigCenter();
 
     // 注册中心
-    private RegisterCenterEnum registerCenter = RegisterCenterEnum.NACOS; // 注册中心实现
-    private String registerAddress = "127.0.0.1:8848"; // 注册中心地址
+    private RegisterCenter registerCenter = new RegisterCenter();
 
-    //netty
-    private int eventLoopGroupBossNum = 1;
-    private int eventLoopGroupWorkerNum = Runtime.getRuntime().availableProcessors();
-    private int maxContentLength = 64 * 1024 * 1024; // 64MB
+    // netty
+    private NettyConfig netty = new NettyConfig();
+
+    // http client
+    private HttpClientConfig httpClient = new HttpClientConfig();
 
     // 路由配置
-    private List<RouteDefinition> routes;
+    private List<RouteDefinition> routes = new ArrayList<>();
 
 }

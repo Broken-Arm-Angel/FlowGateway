@@ -1,4 +1,4 @@
-package com.dpeng.gateway.config.config;
+package com.dpeng.gateway.config.pojo;
 
 import lombok.Data;
 import java.net.URI;
