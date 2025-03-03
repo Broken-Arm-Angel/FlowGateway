@@ -19,18 +19,12 @@ public class ServiceDefinition implements Serializable {
     private String serviceName;
 
     /**
-     * 版本号
-     */
-    private String version;
-
-    /**
-     * 环境
-     */
-    private String envType;
-
-    /**
      * 服务是否启用
      */
-    private boolean enable = true;
+    private boolean enabled = true;
+
+    public ServiceDefinition(String serviceName) {
+        this.serviceName = serviceName;
+    }
 
 }

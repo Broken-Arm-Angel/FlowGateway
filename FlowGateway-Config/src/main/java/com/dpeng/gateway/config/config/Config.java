@@ -15,7 +15,7 @@ import static com.dpeng.gateway.common.constant.ConfigConstant.*;
  * 网关静态配置
  */
 @Data
-public class Config {
+public class    Config {
 
     // base
     private String name = DEFAULT_NAME; // 服务名称

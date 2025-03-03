@@ -1,6 +1,7 @@
 flow:
   gateway:
-    name: gateway-1
+    port: 9999
+    name: flow-gateway
     configCenter:
       enable: true
       type: NACOS
@@ -8,7 +9,7 @@ flow:
       nacos:
         namespace: 7a552eec-cda7-41d5-b020-f73e8d3b8609
         group: GATEWAY_GROUP
-        dataId: flow-gateway
+        dataId: flow-gateway-data
     registerCenter:
       type: NACOS
       address: 127.0.0.1:8848
@@ -18,3 +19,4 @@ flow:
 
     routes:
       - id: 123
+        uri: aaa.com/**
