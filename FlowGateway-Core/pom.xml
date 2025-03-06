@@ -28,14 +28,14 @@
         </dependency>
 
         <dependency>
-            <groupId>com.grace</groupId>
-            <artifactId>GraceGateway-Config</artifactId>
+            <groupId>com.dpeng</groupId>
+            <artifactId>FlowGateway-Config</artifactId>
             <version>1.0</version>
         </dependency>
 
         <dependency>
-            <groupId>com.grace</groupId>
-            <artifactId>GraceGateway-Register</artifactId>
+            <groupId>com.dpeng</groupId>
+            <artifactId>FlowGateway-Register</artifactId>
             <version>1.0</version>
         </dependency>
 
