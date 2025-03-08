@@ -1,8 +1,8 @@
 package com.dpeng.gateway.core.request;
 
 import com.alibaba.nacos.common.utils.StringUtils;
-import com.grace.gateway.common.constant.HttpConstant;
-import com.grace.gateway.config.pojo.ServiceDefinition;
+import com.dpeng.gateway.common.constant.HttpConstant;
+import com.dpeng.gateway.config.pojo.ServiceDefinition;
 import io.netty.buffer.ByteBuf;
 import io.netty.handler.codec.http.*;
 import io.netty.handler.codec.http.cookie.ServerCookieDecoder;
@@ -15,11 +15,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-import static com.grace.gateway.common.constant.BasicConstant.DATE_DEFAULT_FORMATTER;
+import static com.dpeng.gateway.common.constant.BasicConstant.DATE_DEFAULT_FORMATTER;
 
 
 /**
- * 网关请求
+ * 网关请求实体
  */
 @Data
 public class GatewayRequest {
@@ -70,7 +70,7 @@ public class GatewayRequest {
     private final HttpMethod method;
 
     /**
-     * 请求的格式
+     *  请求正文的格式
      */
     private final String contentType;
 
@@ -148,6 +148,7 @@ public class GatewayRequest {
         this.modifyPath = path;
         this.modifyScheme = HttpConstant.HTTP_PREFIX_SEPARATOR;
 
+        //构建下游请求
         this.requestBuilder = new RequestBuilder();
         this.requestBuilder.setMethod(method.name());
         this.requestBuilder.setHeaders(headers);
