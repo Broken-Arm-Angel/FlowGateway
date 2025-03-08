@@ -41,7 +41,7 @@ public class ServiceInstance implements Serializable {
     /**
      * 服务实例是否启用
      */
-    private boolean enable = true;
+    private boolean enabled = true;
 
     /**
      * 服务实例是否灰度
