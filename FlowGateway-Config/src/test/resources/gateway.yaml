@@ -17,4 +17,14 @@ flow:
         group: GATEWAY_GROUP
 
     routes:
-      - id: 123
+      - id: 1
+        serviceName: user
+        uri: /user/**
+      - id: 2
+        serviceName: order1
+        uri: /order/**
+        order: 1
+      - id: 3
+        serviceName: order2
+        uri: /order/cancel/**
+        order: 1
