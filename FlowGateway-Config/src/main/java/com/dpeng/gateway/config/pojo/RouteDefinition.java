@@ -65,15 +65,15 @@ public class RouteDefinition {
         private int waitDurationInOpenState = 60000; // 断路器从开启过渡到半开应等待的时间，单位ms
         private boolean automaticTransitionFromOpenToHalfOpenEnabled = false; // 是否开启额外线程监听断路器从开启到半开的状态变化，如果不开启，则需时间到了并且有请求才会到半开状态
 
-        // Fallback
+        // Fallback(降级)
         private String fallbackHandlerName = DEFAULT_FALLBACK_HANDLER_NAME; // 默认降级策略名
 
-        // Bulkhead
+        // Bulkhead(限流), 信号量隔离
         private int maxConcurrentCalls = 1000; // 信号数量
         private int maxWaitDuration = 0; // 最大等待时间
         private boolean fairCallHandlingEnabled = false; // 是否公平竞争信号量
 
-        // ThreadPoolBulkhead
+        // ThreadPoolBulkhead, 线程池隔离
         private int coreThreadPoolSize = 5; // 核心线程数
         private int maxThreadPoolSize = 10; // 最大线程数
         private int queueCapacity = 100; // 队列容量
